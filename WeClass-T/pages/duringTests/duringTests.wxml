@@ -1,0 +1,29 @@
+<view class="container">
+
+<view class="header">
+<icon type="waiting_circle" size="60" id="icon" bindtap = "clickTimer"></icon>
+<text class="count_down">{{showSecond}}</text>
+</view>
+
+<view wx:for="{{question}}" class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">问题{{index+1}}：</view>
+                    <view class="weui-media-box__desc_question">{{item}}</view>
+        <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" style="margin-top:14px;margin-bottom:-8px">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+                    <view class="weui-media-box__desc_answer">A:{{answer[index][0]}}</view>
+                    <view class="weui-media-box__desc_answer">A:{{answer[index][1]}}</view>
+                    <view class="weui-media-box__desc_answer">A:{{answer[index][2]}}</view>
+                    <view class="weui-media-box__desc_answer">A:{{answer[index][3]}}</view>
+        <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" style="margin-top:14px;margin-bottom:-8px">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+                    <view class="weui-media-box__desc_analysis">{{desc[index]}}</view>
+                </view>
+</view>
+</view>
+
+
+</view>

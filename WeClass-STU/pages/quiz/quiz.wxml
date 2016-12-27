@@ -1,0 +1,40 @@
+<view  class="container timer {{isRuning ? 'timer--runing': ''}}">
+<view class="timerBox">
+	<view class="timer_main">
+		 <view class="timer_time-wrap">
+		 		<view class="timer_progress_mask"></view>
+		 		<view class="timer_progress timer_left">
+		 			<view class="timer_circle timer_circle--left" style="transform: rotate({{leftDeg}}deg);"></view>
+		 		</view>
+		 		<view class="timer_progress timer_right">
+		 			<view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
+		 		</view>
+			 	<text wx:if="{{!completed}}" class="timer_time">{{remainTimeText}}</text>
+			 	<text 
+			 		wx:if="{{isRuning}}" 
+			 		animation="{{nameAnimation}}" 
+			 		class="timer_taskName">{{taskName}}{{completed ? '已完成！' : '中'}}</text>
+		 		<image 
+		 			wx:if="{{completed}}" 
+		 			class="timer_done" 
+		 			src="../../../images/complete.png"></image>
+		 </view>
+</view>
+
+	</view>
+	  <view class="question">
+    <text class="question_main">{{question}}  </text>
+  </view>
+    <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}">
+     <checkbox value="{{index}}" checked="{{false}}" />{{item}}
+</label>
+  </checkbox-group>
+
+
+  <button  class = "button" bindtap = "next_question">提交</button>
+
+
